@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object1</title>
+</head>
+
+<body>
+    <ul>
+        <li>箭頭函式：語法簡潔，且不會自動綁定 this，會繼承外部的 this
+            中。</li>
+        <li>如果你要使用 this，建議使用 傳統函式，因為箭頭函式的 this 會出現問題。</li>
+        <li>箭頭函式適合用在不需要綁定 this 的情境，或是在回呼函式（例如 setTimeout）</li>
+    </ul>
+
+    <script>
+        let person = {
+            name: "小明",
+            age: 25,
+            greet: function(){
+                console.log(`Hi，我是 ${this.name}，今年 ${this.age} 歲！`);
+            } 
+            // greet: () => {
+            //     console.log(`Hi，我是 ${this.name}，今年 ${this.age} 歲！`);
+            // } // 會出現錯誤，this 不指向 person。 this 並不指向物件本身（person），而是繼承自它所在的外部作用域
+        };
+
+        person.greet(); // 呼叫 greet 方法，應該印出 "Hi，我是小明，今年25歲！"
+
+
+        // const person = {
+        //     name: "Ming",
+        //     age: 26
+        // }
+        // function greet(){
+        //     console.log(person.name, person.age);
+        // }
+        // greet();
+    </script>
+</body>
+
+</html>

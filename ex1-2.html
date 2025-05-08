@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+
+<body>
+
+    <script>
+        // [0, 1, 2, 3, 4].reduce(
+        //     function (accumulator, currentValue, currentIndex, array) {
+        //         return accumulator + currentValue;
+        //     },
+        // );
+
+        const numbers = [10, 20, 30, 40, 50];
+        let sum = numbers.reduce((acc,cur) => acc + cur
+        );
+        console.log(sum);
+
+        const scores = [80, 90, 100, 70, 60];
+        const avg = scores.reduce((acc, cur) => acc + cur/ scores.length, 0) ;
+        // const avg = scores.reduce((acc, cur) => acc + cur, 0) / scores.length;
+        console.log(avg); //80
+        
+
+
+    </script>
+</body>
+
+</html>
